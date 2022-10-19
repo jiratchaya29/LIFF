@@ -44,51 +44,62 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    function createUniversalLink() {
-    }
+      function createUniversalLink() {
+      }
 
-    async function shareMsg() {
-    }
+      async function shareMsg() {
+      }
 
-    function logOut() {
-    }
+      function logOut() {
+      }
 
-    function closed() {
-    }
+      function closed() {
+      }
 
-    async function scanCode() {
-    }
+      async function scanCode() {
+      }
 
-    function openWindow() {
-    }
+      function openWindow() {
+      }
 
-    async function getFriendship() {
-    }
+      async function getFriendship() {
+      }
 
-    async function sendMsg() {
-    }
+      async function sendMsg() {
+      }
 
-    function getContext() {
-    }
+      function getContext() {
+      }
 
-    async function getUserProfile() {
-    }
+      async function getUserProfile() {
+      }
 
-    function getEnvironment() {
-      document.getElementById("os").append(liff.getOS())
-      document.getElementById("language").append(liff.getLanguage())
-    }
+      function getEnvironment() {
+          document.getElementById("os").append(liff.getOS())
+          document.getElementById("language").append(liff.getLanguage())
+          document.getElementById("version").append(liff.getVersion())
+          document.getElementById("accessToken").append(liff.getAccessToken())
+          document.getElementById("isInClient").append(liff.isInClient())
+          if(liff.isInClient()){
+              document.getElementById("btnLogOut").style.display = "none"
+          } else {
+              document.getElementById("btnLogOut").style.display = "none"
+              document.getElementById("btnScanCode").style.display = "none"
+              document.getElementById("btnClose").style.display = "none"
+          }
 
-    async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "1657573185-qNOVOmQX" })
-      // getEnvironment()
-      // getUserProfile()
-      // getContext()
-      // getFriendship()
-      // createUniversalLink()
-    }
-    main()
+      }
+
+      async function main() {
+          alert("LINE Developers x Skooldio")
+          await liff.init({ liffId: "1657573185-qNOVOmQX" })
+          // getEnvironment()
+          // getUserProfile()
+          // getContext()
+          // getFriendship()
+          // createUniversalLink()
+      }
+      main()
   </script>
 </body>
 </html>
